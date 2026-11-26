@@ -1,0 +1,10 @@
+# Archivos que suben los usuarios: no se suben a GitHub (son datos personales).
+# Se conservan solo los .htaccess y los documentos de ejemplo de la BD de prueba.
+uploads/documentos/*
+!uploads/documentos/.htaccess
+!uploads/documentos/c4_*
+!uploads/documentos/c5_*
+uploads/evidencias/*
+!uploads/evidencias/.htaccess
+uploads/sitio/*
+!uploads/sitio/.htaccess
