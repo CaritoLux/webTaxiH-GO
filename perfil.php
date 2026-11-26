@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario_id'])) {
     exit;
 }
 
-require_once __DIR__ . '/../taxihgo/taxihgo_api/config/conexion.php';
+require_once __DIR__ . '/config/conexion.php';
 
 $id_usuario = (int)$_SESSION['usuario_id'];
 
@@ -51,7 +51,7 @@ $nombreCompleto = trim($usuario['nombre'] . ' ' . $usuario['apellido_paterno'] .
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.php">
-                <img src="../imagenes/logo.png" alt="TaxiH-GO!" width="42">
+                <img src="assets/img/logo.png" alt="" width="42">
                 <span>TaxiH-GO!</span>
             </a>
 
@@ -61,8 +61,6 @@ $nombreCompleto = trim($usuario['nombre'] . ' ' . $usuario['apellido_paterno'] .
 
             <div class="collapse navbar-collapse" id="menuPerfil">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#pasajeros">Pasajeros</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#taxistas">Taxistas</a></li>
                     <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#tarifa">Tarifa</a></li>
                     <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#contacto">Contacto</a></li>
 
@@ -93,6 +91,12 @@ $nombreCompleto = trim($usuario['nombre'] . ' ' . $usuario['apellido_paterno'] .
                                 <li>
                                     <a class="dropdown-item py-2" href="conductor/panel.php">
                                         <i class="bi bi-car-front me-2"></i>Panel Conductor
+                                    </a>
+                                </li>
+                            <?php elseif ($usuario['rol'] === 'PASAJERO'): ?>
+                                <li>
+                                    <a class="dropdown-item py-2" href="pasajero/viajes.php">
+                                        <i class="bi bi-clock-history me-2"></i>Mis viajes
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -131,7 +135,7 @@ $nombreCompleto = trim($usuario['nombre'] . ' ' . $usuario['apellido_paterno'] .
                             <div class="d-flex align-items-center mb-4">
                                 <div class="avatar-circulo me-3"><?= htmlspecialchars($iniciales) ?></div>
                                 <div>
-                                    <h4 class="fw-bold mb-1"><?= htmlspecialchars($nombreCompleto) ?></h4>
+                                    <h1 class="h4 fw-bold mb-1"><?= htmlspecialchars($nombreCompleto) ?></h1>
                                     <span class="badge rounded-pill px-3 py-1" style="background-color: #FEF3C7; color: #111827;">
                                         <?= htmlspecialchars($usuario['rol']) ?>
                                     </span>
@@ -174,7 +178,7 @@ $nombreCompleto = trim($usuario['nombre'] . ' ' . $usuario['apellido_paterno'] .
     <footer class="border-top py-4 bg-white mt-auto">
         <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small text-muted">
             <span>TaxiH-GO! · Central de taxis por aplicación de Huejutla de Reyes, Hidalgo.</span>
-            <a href="#" class="text-muted text-decoration-underline">Aviso de privacidad</a>
+            <a href="politicas.php" class="text-muted text-decoration-underline">Aviso de privacidad</a>
         </div>
     </footer>
 

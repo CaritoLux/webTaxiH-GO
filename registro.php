@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../taxihgo/taxihgo_api/config/conexion.php';
+require_once __DIR__ . '/config/conexion.php';
 
 // Si ya hay sesión activa, redirigir según el rol
 if (isset($_SESSION['usuario_id']) && isset($_SESSION['rol'])) {
@@ -193,7 +193,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.php">
-                <img src="../imagenes/logo.png" alt="TaxiH-GO!" width="42">
+                <img src="assets/img/logo.png" alt="" width="42">
                 <span>TaxiH-GO!</span>
             </a>
 
@@ -203,8 +203,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="collapse navbar-collapse" id="menuRegistro">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#pasajeros">Pasajeros</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#taxistas">Taxistas</a></li>
                     <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#tarifa">Tarifa</a></li>
                     <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#contacto">Contacto</a></li>
                     <li class="nav-item ms-lg-2">
@@ -232,10 +230,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <!-- Logo centrado -->
                             <div class="text-center mb-3">
-                                <img src="../imagenes/logo.png" alt="TaxiH-GO!" width="95">
+                                <img src="assets/img/logo.png" alt="TaxiH-GO!" width="95">
                             </div>
 
-                            <h3 class="fw-bold mb-1">Crear cuenta</h3>
+                            <h1 class="h3 fw-bold mb-1">Crear cuenta</h1>
                             <p class="text-muted small mb-4">Elige cómo vas a usar TaxiH-GO! y completa tus datos.</p>
 
                             <?php if ($errorGeneral !== ''): ?>
