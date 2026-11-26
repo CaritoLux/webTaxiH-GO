@@ -5,7 +5,7 @@ if (!isset($_SESSION['usuario_id'])) {
     exit;
 }
 
-require_once __DIR__ . '/../taxihgo_api/config/conexion.php';
+require_once __DIR__ . '/../taxihgo/taxihgo_api/config/conexion.php';
 
 $id_usuario = (int)$_SESSION['usuario_id'];
 

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../taxihgo_api/config/conexion.php';
+require_once __DIR__ . '/../taxihgo/taxihgo_api/config/conexion.php';
 
 // Si ya hay sesión activa, redirigir según el rol
 if (isset($_SESSION['usuario_id']) && isset($_SESSION['rol'])) {

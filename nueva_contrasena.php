@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../taxihgo_api/config/conexion.php';
+require_once __DIR__ . '/../taxihgo/taxihgo_api/config/conexion.php';
 
 if (!isset($_SESSION['correo_recuperacion'])) {
     header('Location: recuperar.php');
