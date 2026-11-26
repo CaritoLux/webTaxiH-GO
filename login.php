@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once __DIR__ . '/../taxihgo/taxihgo_api/config/conexion.php';
+require_once __DIR__ . '/config/conexion.php';
 
 // Si ya hay sesión activa, redirigir según el rol
 if (isset($_SESSION['usuario_id']) && isset($_SESSION['rol'])) {
@@ -170,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top py-3">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.php">
-                <img src="../imagenes/logo.png" alt="TaxiH-GO!" width="42">
+                <img src="assets/img/logo.png" alt="" width="42">
                 <span>TaxiH-GO!</span>
             </a>
 
@@ -180,8 +180,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <div class="collapse navbar-collapse" id="menuLogin">
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
-                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#pasajeros">Pasajeros</a></li>
-                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#taxistas">Taxistas</a></li>
                     <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#tarifa">Tarifa</a></li>
                     <li class="nav-item"><a class="nav-link text-dark fw-medium" href="index.php#contacto">Contacto</a></li>
                     <li class="nav-item ms-lg-2">
@@ -209,10 +207,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                             <!-- Logo centrado -->
                             <div class="text-center mb-3">
-                                <img src="../imagenes/logo.png" alt="TaxiH-GO!" width="95">
+                                <img src="assets/img/logo.png" alt="TaxiH-GO!" width="95">
                             </div>
 
-                            <h3 class="fw-bold mb-1">Iniciar sesión</h3>
+                            <h1 class="h3 fw-bold mb-1">Iniciar sesión</h1>
                             <p class="text-muted small mb-4">Pasajeros, conductores, base y administración.</p>
 
                             <!-- Alertas generales (intentos fallidos, cuenta bloqueada o suspendida) -->
@@ -286,7 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <footer class="border-top py-4 bg-white mt-auto">
         <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2 small text-muted">
             <span>TaxiH-GO! · Central de taxis por aplicación de Huejutla de Reyes, Hidalgo.</span>
-            <a href="#" class="text-muted text-decoration-underline">Aviso de privacidad</a>
+            <a href="politicas.php" class="text-muted text-decoration-underline">Aviso de privacidad</a>
         </div>
     </footer>
 
